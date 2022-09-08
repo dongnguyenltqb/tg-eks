@@ -5,7 +5,7 @@ remote_state {
     if_exists = "skip"
   }
   config = {
-    bucket = "dn-tg-state"
+    bucket = "dong-tfgrunt-state"
 
     key    = "${path_relative_to_include()}/terraform.tfstate"
     region = "ap-southeast-1"

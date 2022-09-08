@@ -12,7 +12,7 @@ terraform {
 
 inputs = {
   profile_name        = "cafeJumpEC2InstanceProfileRole"
-  managed_policy_arns = ["arn:aws:iam::aws:policy/AdministratorAccess"]
+  managed_policy_arns = ["arn:aws:iam::aws:policy/AmazonEC2FullAccess"]
   tags = {
     Project   = "Cafe"
     Component = "JumpServer"

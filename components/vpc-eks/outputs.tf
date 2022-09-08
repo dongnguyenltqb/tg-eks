@@ -57,20 +57,32 @@ output "eksAwsLoadBalancerControllerRoleArn" {
   value = aws_iam_role.eksAwsLoadBalancerController.arn
 }
 
-output "cluster-name" {
+output "cluster_name" {
   value = aws_eks_cluster.cluster.name
 }
 
-output "cluster-sg" {
+output "cluster_sg" {
   value = aws_eks_cluster.cluster.vpc_config[0].cluster_security_group_id
 }
 
-output "endpoint" {
+output "cluster_endpoint" {
   value = aws_eks_cluster.cluster.endpoint
 }
 
-output "oidc" {
+output "cluster_ca" {
+  value = aws_eks_cluster.cluster.certificate_authority[0].data
+}
+
+output "cluster_oidc_issuer" {
   value = aws_eks_cluster.cluster.identity.0.oidc.0.issuer
+}
+
+output "cluster_oidc_url" {
+  value = aws_iam_openid_connect_provider.eksCluster.url
+}
+
+output "cluster_oidc_arn" {
+  value = aws_iam_openid_connect_provider.eksCluster.arn
 }
 
 output "eksEC2JumpServerIP" {

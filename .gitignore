@@ -2,3 +2,4 @@
 **/**/.terraform
 vars/*.tfvars
 ssh-keys
+ovpn

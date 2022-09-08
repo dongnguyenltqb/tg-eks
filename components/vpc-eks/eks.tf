@@ -58,5 +58,17 @@ resource "aws_eks_addon" "cni" {
   addon_name   = "vpc-cni"
 }
 
+resource "aws_eks_addon" "kubeproxy" {
+  cluster_name = aws_eks_cluster.cluster.name
+  addon_name   = "kube-proxy"
+}
 
+resource "aws_eks_addon" "core-dns" {
+  cluster_name = aws_eks_cluster.cluster.name
+  addon_name   = "coredns"
+}
 
+resource "aws_eks_addon" "ebs-csi" {
+  cluster_name = aws_eks_cluster.cluster.name
+  addon_name   = "aws-ebs-csi-driver"
+}
